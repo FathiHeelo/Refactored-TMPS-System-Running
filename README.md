@@ -1,8 +1,9 @@
 # Refactored-TMPS-System-Running
+
+
 TaskMaster Processing System (TMPS) - Refactored Version
 Java
 Design Patterns
-Repository: https://github.com/FathiHeelo/Refactored-TMPS-System-Running
 Project Overview
 This repository contains my complete refactoring of the TaskMaster Processing System (TMPS), a job processing and resource management application originally designed to handle various job types such as email sending, data processing, and report generation.
 I started with a deliberately naive and flawed codebase, thoroughly analyzed its issues (including SOLID violations, tight coupling, code duplication, poor cohesion, and misuse of inheritance), and transformed it into a clean, modular, extensible, and maintainable system by applying four core design patterns.
@@ -63,12 +64,6 @@ Systematic identification and documentation of code smells and design flaws
 Building scalable, enterprise-ready systems in Java
 Importance of clean code and maintainable architecture in long-term projects
 
-Future Enhancements (Ideas)
-
-Integrate with a real database (currently simulated)
-Add asynchronous job processing using ExecutorService
-Develop a simple web or desktop UI for job submission and monitoring
-Implement job persistence and scheduling
 
 Refactored by: Fathi Heelo 🚀
 License: MIT - Feel free to fork, explore, and contribute!
