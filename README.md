@@ -51,18 +51,6 @@ Language: Java 17+
 Concurrency: BlockingQueue and synchronization for thread safety
 Core Concepts: Design Patterns (Prototype, Strategy, Proxy, Singleton for pool management)
 
-Project Structure
-textsrc/
-└── edu.najah.cap.advance.assignments.assignment1/
-    ├── connection/     # ConnectionPool and related classes
-    ├── prototype/      # Templates and registry
-    ├── strategy/       # Strategies and factory
-    ├── proxy/          # Job execution proxy
-    ├── job/            # Job models and types
-    └── executor/       # Core execution logic
-How to Run
-Bashgit clone https://github.com/FathiHeelo/Refactored-TMPS-System-Running.git
-cd Refactored-TMPS-System-Running
 
 Open the project in your favorite Java IDE (IntelliJ IDEA or Eclipse recommended)
 Run the Main class to see sample job executions (email, data processing, report)
