@@ -1,69 +1,65 @@
-# Refactored-TMPS-System-Running
+# TaskMaster Processing System (TMPS) – Refactored Version
 
+## 📌 Overview
+This project is a complete refactoring of the TaskMaster Processing System (TMPS), a job processing application for handling tasks like email sending, data processing, and report generation.
 
-TaskMaster Processing System (TMPS) - Refactored Version
-Java
-Design Patterns
-Project Overview
-This repository contains my complete refactoring of the TaskMaster Processing System (TMPS), a job processing and resource management application originally designed to handle various job types such as email sending, data processing, and report generation.
-I started with a deliberately naive and flawed codebase, thoroughly analyzed its issues (including SOLID violations, tight coupling, code duplication, poor cohesion, and misuse of inheritance), and transformed it into a clean, modular, extensible, and maintainable system by applying four core design patterns.
-Key Refactorings & Design Patterns Applied
-1. Connection Pool (Efficient Resource Management)
+Starting from a flawed codebase, I analyzed design issues (SOLID violations, tight coupling, code duplication) and rebuilt the system into a clean, modular, and scalable architecture using design patterns.
 
-Thread-safe pool managing up to 10 reusable database connections
-acquire() method blocks or queues when no connections are available
-release() safely returns connections to the pool
-All job executions obtain connections via the Proxy pattern
+---
 
-2. Prototype Pattern (Fast Job Templating)
+## 🧠 Design Patterns Applied
 
-Replaced expensive from-scratch job template creation with efficient cloning
-Implemented JobPrototype interface
-Created concrete prototypes: EmailJobTemplate, DataProcessingJobTemplate, ReportJobTemplate
-Built JobTemplateRegistry to store and retrieve reusable templates
+### 🔹 Connection Pool
+- Thread-safe pool for managing database connections
+- Limits connections and reuses them efficiently
+- Prevents resource exhaustion
 
-3. Strategy Pattern (Flexible Job Execution)
+### 🔹 Prototype Pattern
+- Clone-based job template creation instead of rebuilding objects
+- Supports reusable templates for different job types
 
-Eliminated long if/else chains and hard-coded type checks in JobExecutor
-Introduced JobStrategy interface
-Implemented concrete strategies: EmailJobStrategy, DataProcessingStrategy, ReportGenerationStrategy
-Created JobStrategyFactory to map job types to appropriate strategies
+### 🔹 Strategy Pattern
+- Replaces complex conditionals with flexible execution strategies
+- Each job type has its own execution logic
 
-4. Proxy Pattern (Controlled & Monitored Execution)
+### 🔹 Proxy Pattern
+- Controls and monitors job execution
+- Handles logging, permissions, timing, and connection management
 
-Added a proxy layer for secure and monitored job execution
-Handles user permission validation
-Logs job start/end events
-Measures execution time
-Automatically acquires and releases connections from the pool
-Delegates to the real executor while keeping direct access available for internal use
+---
 
-Benefits of the Refactoring
+## 🚀 Key Improvements
+- Improved scalability through connection pooling
+- Easier extensibility for adding new job types
+- Cleaner architecture with strong SOLID principles
+- Better performance by reducing object creation
+- More reliable execution with logging and monitoring
 
-Scalability: Efficient connection reuse prevents resource exhaustion
-Extensibility: New job types can be added without modifying existing code
-Maintainability: Clear separation of concerns and strong adherence to SOLID principles
-Performance: Reduced object creation overhead through prototyping
-Reliability: Controlled execution with logging, timing, and permission checks
+---
 
-Technologies Used
+## 🛠️ Technologies Used
+- Java 17+
+- Concurrency (BlockingQueue, synchronization)
+- Object-Oriented Design & Design Patterns
 
-Language: Java 17+
-Concurrency: BlockingQueue and synchronization for thread safety
-Core Concepts: Design Patterns (Prototype, Strategy, Proxy, Singleton for pool management)
+---
 
+## ▶️ How to Run
+1. Open the project in IntelliJ or Eclipse  
+2. Run the `Main` class  
+3. Check logs for execution flow and system behavior  
 
-Open the project in your favorite Java IDE (IntelliJ IDEA or Eclipse recommended)
-Run the Main class to see sample job executions (email, data processing, report)
-Observe logging output showing connection pooling, timing, and execution flow
+---
 
-What I Learned
+## 📚 What I Learned
+- Applying design patterns to solve real architectural problems  
+- Identifying and fixing code smells in large systems  
+- Building scalable and maintainable Java applications  
+- Writing cleaner, more structured code  
 
-Practical application of design patterns to resolve real architectural problems
-Systematic identification and documentation of code smells and design flaws
-Building scalable, enterprise-ready systems in Java
-Importance of clean code and maintainable architecture in long-term projects
+---
 
+## 👨‍💻 Author
+Refactored by: **Fathi Heelo** 🚀  
 
-Refactored by: Fathi Heelo 🚀
-License: MIT - Feel free to fork, explore, and contribute!
+---
